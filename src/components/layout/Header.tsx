@@ -119,9 +119,9 @@ function Logo({ isScrolled }: LogoProps) {
         <Image
           src="/images/logo.png"
           alt="Visit Auburn California"
-          width={160}
-          height={60}
-          className="h-12 md:h-14 w-auto object-contain transition-all duration-500"
+          width={200}
+          height={75}
+          className="h-16 md:h-20 w-auto object-contain transition-all duration-500"
           priority
         />
       </motion.div>
