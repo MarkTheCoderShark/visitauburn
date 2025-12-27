@@ -283,8 +283,8 @@ function NavLink({ item, isScrolled }: NavLinkProps) {
         href={item.href}
         className={`group relative flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors duration-500 ${
           isScrolled
-            ? "text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
-            : "text-white/90 hover:text-white"
+            ? "text-[#C9A24A] hover:text-[#E2C58F]"
+            : "text-[#C9A24A] hover:text-[#E2C58F]"
         }`}
       >
         <span className="relative">
@@ -301,7 +301,7 @@ function NavLink({ item, isScrolled }: NavLinkProps) {
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
           >
-            <ChevronDown className="w-3.5 h-3.5" />
+            <ChevronDown className="w-3.5 h-3.5 text-[#C9A24A]" />
           </motion.div>
         )}
       </Link>
