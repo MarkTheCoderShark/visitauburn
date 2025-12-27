@@ -359,9 +359,11 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
             {/* Premium CTA section */}
             <div className="p-6 border-t border-[var(--color-neutral-100)] bg-gradient-to-t from-[var(--color-neutral-50)] to-white">
-              <Button fullWidth onClick={onClose}>
-                Plan Your Trip
-              </Button>
+              <Link href="/plan" onClick={onClose}>
+                <Button fullWidth>
+                  Plan Your Trip
+                </Button>
+              </Link>
               <p className="text-xs text-center text-[var(--color-text-muted)] mt-4 tracking-wide">
                 Start planning your Auburn adventure
               </p>
@@ -437,7 +439,8 @@ export function Header() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <button
+                <Link
+                  href="/plan"
                   className={`px-5 py-2.5 text-sm font-semibold rounded-lg border transition-all duration-500 backdrop-blur-sm ${
                     isScrolled
                       ? "border-[#C9A24A]/50 text-[#C9A24A] hover:border-[#C9A24A] hover:bg-[#C9A24A]/10"
@@ -445,7 +448,7 @@ export function Header() {
                   }`}
                 >
                   Plan Your Trip
-                </button>
+                </Link>
               </motion.div>
             </div>
 
