@@ -92,13 +92,15 @@ export default function Hero() {
         {/* Main Headline */}
         <motion.h1
           variants={itemVariants}
-          className="font-display mb-8 md:mb-10 tracking-tight whitespace-nowrap"
+          className="font-display mb-8 md:mb-10 tracking-tight"
           style={{
             textShadow: '0 2px 20px rgba(0,0,0,0.3)',
-            fontSize: 'clamp(3rem, 10vw, 10rem)'
+            fontSize: 'clamp(3rem, 10vw, 10rem)',
+            lineHeight: '0.9'
           }}
         >
-          <span className="font-light italic text-white">Discover </span>
+          <span className="font-light italic text-white">Discover</span>
+          <br />
           <span className="font-semibold text-[#C9A24A]">
             Auburn, CA
           </span>
