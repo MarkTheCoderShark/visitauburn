@@ -194,7 +194,7 @@ export default function CategoryGrid() {
             <button
               onClick={scrollPrev}
               disabled={!canScrollPrev}
-              className="p-2 rounded-full border border-stone-300 text-stone-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors hover:border-stone-900 hover:text-stone-900"
+              className="p-2 rounded-full border border-white/30 text-white/70 disabled:opacity-30 disabled:cursor-not-allowed transition-colors hover:border-[#C9A24A] hover:text-[#C9A24A]"
               aria-label="Previous"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -202,7 +202,7 @@ export default function CategoryGrid() {
             <button
               onClick={scrollNext}
               disabled={!canScrollNext}
-              className="p-2 rounded-full border border-stone-300 text-stone-600 disabled:opacity-30 disabled:cursor-not-allowed transition-colors hover:border-stone-900 hover:text-stone-900"
+              className="p-2 rounded-full border border-white/30 text-white/70 disabled:opacity-30 disabled:cursor-not-allowed transition-colors hover:border-[#C9A24A] hover:text-[#C9A24A]"
               aria-label="Next"
             >
               <ChevronRight className="w-5 h-5" />

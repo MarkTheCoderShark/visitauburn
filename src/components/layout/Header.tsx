@@ -281,11 +281,8 @@ function NavLink({ item, isScrolled }: NavLinkProps) {
     >
       <Link
         href={item.href}
-        className={`group relative flex items-center gap-1.5 px-4 py-2 text-sm font-medium transition-colors duration-500 ${
-          isScrolled
-            ? "text-[#C9A24A] hover:text-[#E2C58F]"
-            : "text-[#C9A24A] hover:text-[#E2C58F]"
-        }`}
+        className="group relative flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#C9A24A] hover:text-[#E2C58F] transition-colors duration-500"
+        style={{ color: '#C9A24A' }}
       >
         <span className="relative">
           {item.label}
@@ -523,17 +520,11 @@ export function Header() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Button
-                  size="sm"
-                  variant={isScrolled ? "primary" : "secondary"}
-                  className={`transition-all duration-500 ${
-                    !isScrolled
-                      ? "!bg-white/10 !border-white/30 !text-white hover:!bg-white/20 backdrop-blur-sm"
-                      : ""
-                  }`}
+                <button
+                  className="px-5 py-2.5 text-sm font-medium rounded-lg border border-[#C9A24A]/50 text-[#C9A24A] hover:border-[#C9A24A] hover:bg-[#C9A24A]/10 transition-all duration-300 backdrop-blur-sm"
                 >
                   Plan Your Trip
-                </Button>
+                </button>
               </motion.div>
             </div>
 
