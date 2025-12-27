@@ -48,7 +48,7 @@ const categories: Category[] = [
     id: 'family',
     title: 'Family Fun',
     description: 'Adventures and activities for all ages to enjoy together.',
-    image: 'https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?w=800&q=80',
+    image: '/images/family-fun.png',
     href: '/things-to-do/family',
   },
   {
