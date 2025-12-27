@@ -113,7 +113,7 @@ function HeroSection() {
       {/* Parallax Background */}
       <motion.div style={{ y }} className="absolute inset-0">
         <Image
-          src="/images/feature-old-town.jpg"
+          src="/images/hero.png"
           alt="Plan Your Visit to Auburn California"
           fill
           className="object-cover"
