@@ -35,9 +35,10 @@ export default function Hero() {
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.8, ease: [0.25, 0.46, 0.45, 0.94] as const }}
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
           backgroundImage: 'url(/images/hero.png)',
+          backgroundPosition: 'center 60%',
         }}
       />
 
@@ -86,53 +87,22 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 max-w-5xl mx-auto px-6 text-center"
+        className="relative z-10 max-w-5xl mx-auto px-6 text-center -mt-32 md:-mt-48"
       >
-        {/* Eyebrow Label */}
-        <motion.div variants={itemVariants} className="mb-6 md:mb-8">
-          <span className="inline-flex items-center gap-3 text-white/90">
-            <span className="w-8 md:w-12 h-px bg-gradient-to-r from-transparent via-white/60 to-white/60" />
-            <span className="text-xs md:text-sm tracking-[0.25em] uppercase font-light font-sans">
-              California&apos;s Historic Gold Country
-            </span>
-            <span className="w-8 md:w-12 h-px bg-gradient-to-l from-transparent via-white/60 to-white/60" />
-          </span>
-        </motion.div>
-
-        {/* Main Headline - Split Typography */}
+        {/* Main Headline */}
         <motion.h1
           variants={itemVariants}
-          className="font-display mb-6 md:mb-8"
-        >
-          <span
-            className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light italic text-white tracking-tight"
-            style={{
-              textShadow: '0 4px 30px rgba(0,0,0,0.4)',
-            }}
-          >
-            Discover
-          </span>
-          <span
-            className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-semibold text-gradient-gold tracking-tight mt-1 md:mt-2"
-            style={{
-              filter: 'drop-shadow(0 4px 30px rgba(0,0,0,0.3))',
-            }}
-          >
-            Auburn
-          </span>
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          variants={itemVariants}
-          className="text-lg sm:text-xl md:text-2xl font-light text-white/90 mb-10 md:mb-14 max-w-2xl mx-auto leading-relaxed font-sans"
+          className="font-display mb-8 md:mb-10 tracking-tight whitespace-nowrap"
           style={{
-            textShadow: '0 2px 20px rgba(0,0,0,0.5)',
+            textShadow: '0 2px 20px rgba(0,0,0,0.3)',
+            fontSize: 'clamp(3rem, 10vw, 10rem)'
           }}
         >
-          Where rivers meet trails, and history meets adventure in the
-          <span className="text-white font-normal"> Sierra Nevada foothills</span>.
-        </motion.p>
+          <span className="font-light italic text-white">Discover </span>
+          <span className="font-semibold text-[#C9A24A]">
+            Auburn, CA
+          </span>
+        </motion.h1>
 
         {/* CTA Buttons */}
         <motion.div

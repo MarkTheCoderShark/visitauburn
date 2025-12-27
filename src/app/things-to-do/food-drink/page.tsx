@@ -1,0 +1,433 @@
+'use client';
+
+import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRef } from 'react';
+import { ArrowRight, UtensilsCrossed, Wine, Beer, Coffee, Clock, MapPin, Star } from 'lucide-react';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { Container } from '@/components/ui/Container';
+
+const categories = [
+  {
+    id: 'dining',
+    title: 'Farm-to-Fork Dining',
+    description: 'Auburn embraces California\'s farm-to-fork movement with restaurants sourcing ingredients from local farms, ranches, and artisan producers. From casual bistros to upscale dining, taste the freshness of the Sierra foothills.',
+    image: '/images/categories/food-drink.jpg',
+    icon: UtensilsCrossed,
+    highlights: ['Local Ingredients', 'Seasonal Menus', 'California Cuisine'],
+  },
+  {
+    id: 'wine',
+    title: 'Wine Tasting',
+    description: 'The Gold Country wine region produces exceptional wines in small batches. Visit tasting rooms in historic buildings or venture to nearby vineyards for a true wine country experience.',
+    image: '/images/seasonal/spring-1.jpg',
+    icon: Wine,
+    highlights: ['Tasting Rooms', 'Vineyard Tours', 'Wine Pairing Events'],
+  },
+  {
+    id: 'craft-beer',
+    title: 'Craft Breweries',
+    description: 'Auburn\'s craft beer scene is thriving with local breweries creating innovative brews inspired by the region. Enjoy a cold pint in a taproom or take home a growler.',
+    image: '/images/seasonal/summer-1.jpg',
+    icon: Beer,
+    highlights: ['Local Breweries', 'Taprooms', 'Brewery Tours'],
+  },
+  {
+    id: 'coffee',
+    title: 'Cafés & Bakeries',
+    description: 'Start your morning with locally roasted coffee and fresh-baked pastries. Auburn\'s café scene offers cozy spots to relax and refuel during your exploration.',
+    image: '/images/seasonal/fall-1.jpg',
+    icon: Coffee,
+    highlights: ['Local Roasters', 'Fresh Pastries', 'Outdoor Seating'],
+  },
+];
+
+const featuredSpots = [
+  {
+    name: 'Auburn Alehouse',
+    type: 'Brewery & Restaurant',
+    description: 'Historic firehouse turned award-winning brewery with elevated pub fare.',
+    rating: 4.8,
+    priceRange: '$$',
+  },
+  {
+    name: 'Bootleggers Old Town',
+    type: 'California Cuisine',
+    description: 'Creative California cuisine in a restored 1890s building.',
+    rating: 4.7,
+    priceRange: '$$$',
+  },
+  {
+    name: 'Latitudes',
+    type: 'World Cuisine',
+    description: 'Global flavors with local ingredients and craft cocktails.',
+    rating: 4.6,
+    priceRange: '$$',
+  },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+};
+
+function HeroSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start'],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  return (
+    <section ref={ref} className="relative h-[80vh] min-h-[600px] overflow-hidden">
+      <motion.div style={{ y }} className="absolute inset-0">
+        <Image
+          src="/images/categories/food-drink.jpg"
+          alt="Auburn Food and Drink"
+          fill
+          className="object-cover"
+          priority
+        />
+      </motion.div>
+
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
+      <div className="film-grain-overlay" />
+
+      <motion.div
+        style={{ opacity }}
+        className="relative z-10 h-full flex items-end pb-20 md:pb-28"
+      >
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="max-w-3xl"
+          >
+            <span className="inline-flex items-center gap-3 text-[#E2C58F] text-xs font-medium tracking-[0.25em] uppercase mb-6">
+              <span className="w-8 h-px bg-gradient-to-r from-[#C9A24A] to-transparent" />
+              Things to Do
+            </span>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-6 leading-[1.1]">
+              <span className="font-light italic">Food & </span>
+              <span className="font-semibold text-[#E2C58F]">Drink</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed font-light">
+              From farm-fresh cuisine to award-winning wines and craft beers,
+              savor the flavors of Gold Country.
+            </p>
+
+            <div className="flex flex-wrap gap-6 mt-10">
+              <div className="flex items-center gap-2 text-white/70">
+                <UtensilsCrossed className="w-5 h-5 text-[#C9A24A]" />
+                <span className="text-sm">50+ Restaurants</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/70">
+                <Wine className="w-5 h-5 text-[#C9A24A]" />
+                <span className="text-sm">20+ Wineries</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/70">
+                <Beer className="w-5 h-5 text-[#C9A24A]" />
+                <span className="text-sm">Local Breweries</span>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </motion.div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[var(--color-background)] to-transparent" />
+    </section>
+  );
+}
+
+function CategoryCard({ category, index }: { category: typeof categories[0]; index: number }) {
+  const isEven = index % 2 === 0;
+  const Icon = category.icon;
+
+  return (
+    <motion.div
+      variants={itemVariants}
+      className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
+        isEven ? '' : 'lg:flex-row-reverse'
+      }`}
+    >
+      <div className={`relative ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-sm group">
+          <Image
+            src={category.image}
+            alt={category.title}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+          <div className="absolute top-6 left-6 w-14 h-14 bg-[#B8860B]/90 rounded-full flex items-center justify-center backdrop-blur-sm">
+            <Icon className="w-6 h-6 text-white" />
+          </div>
+        </div>
+
+        <div
+          className={`absolute -bottom-4 ${isEven ? '-right-4 lg:-right-8' : '-left-4 lg:-left-8'} w-24 h-24 border-2 border-[#B8860B]/30 rounded-sm hidden md:block`}
+        />
+      </div>
+
+      <div className={`${isEven ? 'lg:order-2 lg:pl-8' : 'lg:order-1 lg:pr-8'}`}>
+        <span className="text-xs font-medium tracking-[0.2em] uppercase text-[#B8860B]">
+          Taste the Region
+        </span>
+
+        <h2 className="font-serif text-3xl md:text-4xl text-[var(--color-text-primary)] mt-3 mb-6 leading-tight">
+          {category.title}
+        </h2>
+
+        <p className="text-[var(--color-text-secondary)] text-lg leading-relaxed mb-8">
+          {category.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mb-8">
+          {category.highlights.map((highlight) => (
+            <span
+              key={highlight}
+              className="px-3 py-1.5 bg-[var(--color-neutral-100)] rounded-full text-sm text-[var(--color-text-secondary)]"
+            >
+              {highlight}
+            </span>
+          ))}
+        </div>
+
+        <Link
+          href="#"
+          className="group inline-flex items-center gap-3 text-sm font-medium tracking-wide uppercase text-[#B8860B] transition-colors hover:text-[#C9A24A]"
+        >
+          <span>Explore Options</span>
+          <span className="w-8 h-px bg-[#B8860B] group-hover:bg-[#C9A24A] transition-all duration-300 group-hover:w-12" />
+          <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </Link>
+      </div>
+    </motion.div>
+  );
+}
+
+function FeaturedSpots() {
+  return (
+    <section className="py-20 md:py-28 bg-[var(--color-neutral-900)] relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-[#B8860B]/10 to-transparent" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-[#C9A24A]/5 blur-3xl" />
+
+      <Container>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="text-[#C9A24A] text-xs font-medium tracking-[0.25em] uppercase mb-4 block">
+            Local Favorites
+          </span>
+          <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">
+            Must-Try Spots
+          </h2>
+          <p className="text-lg text-white/70 max-w-xl mx-auto">
+            Local favorites that capture the essence of Auburn&apos;s culinary scene
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {featuredSpots.map((spot, index) => (
+            <motion.div
+              key={spot.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-6 hover:bg-white/10 transition-colors"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs text-[#C9A24A] uppercase tracking-wider">{spot.type}</span>
+                <span className="text-white/60 text-sm">{spot.priceRange}</span>
+              </div>
+              <h3 className="font-serif text-xl text-white mb-3">{spot.name}</h3>
+              <p className="text-white/60 text-sm mb-4">{spot.description}</p>
+              <div className="flex items-center gap-1 text-[#C9A24A]">
+                <Star className="w-4 h-4 fill-current" />
+                <span className="text-sm font-medium">{spot.rating}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function FarmersMarket() {
+  return (
+    <section className="py-20 md:py-28 bg-[var(--color-background-warm)]">
+      <Container>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="text-[#B8860B] text-xs font-medium tracking-[0.25em] uppercase mb-4 block">
+              Fresh & Local
+            </span>
+            <h2 className="font-serif text-3xl md:text-4xl text-[var(--color-text-primary)] mb-6">
+              Auburn Farmers&apos; Market
+            </h2>
+            <p className="text-lg text-[var(--color-text-secondary)] leading-relaxed mb-8">
+              Every Saturday morning, Old Town comes alive with the Auburn Farmers&apos;
+              Market. Browse fresh produce, artisan foods, and handcrafted goods from
+              local growers and makers.
+            </p>
+
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-sm shadow-sm">
+                <Clock className="w-5 h-5 text-[#C9A24A] mt-0.5" />
+                <div>
+                  <h4 className="font-medium text-[var(--color-text-primary)]">Market Hours</h4>
+                  <p className="text-sm text-[var(--color-text-muted)]">Saturdays, 8am - 12pm (Year-round)</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-white rounded-sm shadow-sm">
+                <MapPin className="w-5 h-5 text-[#C9A24A] mt-0.5" />
+                <div>
+                  <h4 className="font-medium text-[var(--color-text-primary)]">Location</h4>
+                  <p className="text-sm text-[var(--color-text-muted)]">Historic Old Town Auburn</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="aspect-[4/3] rounded-sm overflow-hidden">
+              <Image
+                src="/images/seasonal/summer-1.jpg"
+                alt="Auburn Farmers Market"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-sm shadow-xl max-w-xs">
+              <span className="text-[#B8860B] text-3xl font-serif">40+</span>
+              <p className="text-sm text-[var(--color-text-muted)] mt-1">
+                Local vendors every weekend
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function CTASection() {
+  return (
+    <section className="py-20 md:py-28 bg-[var(--color-background)] relative">
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8860B' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }} />
+
+      <Container>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <span className="section-label mb-6">Hungry for More?</span>
+
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[var(--color-text-primary)] mb-6">
+            Taste Gold Country
+          </h2>
+
+          <p className="text-lg text-[var(--color-text-secondary)] mb-10 max-w-xl mx-auto">
+            From morning coffee to fine dining, Auburn offers culinary
+            experiences that celebrate local flavors and California&apos;s bounty.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/plan"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#C9A24A] text-white font-medium text-sm tracking-wider uppercase rounded-sm hover:bg-[#B8860B] transition-colors shadow-lg shadow-[#C9A24A]/20"
+            >
+              Plan Your Visit
+            </Link>
+            <Link
+              href="/things-to-do"
+              className="inline-flex items-center justify-center px-8 py-4 border border-[var(--color-neutral-300)] text-[var(--color-text-primary)] font-medium text-sm tracking-wider uppercase rounded-sm hover:border-[#C9A24A] hover:text-[#C9A24A] transition-colors"
+            >
+              More Things to Do
+            </Link>
+          </div>
+        </motion.div>
+      </Container>
+    </section>
+  );
+}
+
+export default function FoodDrinkPage() {
+  return (
+    <>
+      <Header />
+      <main>
+        <HeroSection />
+
+        <section className="py-20 md:py-32 bg-[var(--color-background)]">
+          <Container>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-100px' }}
+              className="space-y-24 md:space-y-32"
+            >
+              {categories.map((category, index) => (
+                <CategoryCard key={category.id} category={category} index={index} />
+              ))}
+            </motion.div>
+          </Container>
+        </section>
+
+        <FeaturedSpots />
+        <FarmersMarket />
+        <CTASection />
+      </main>
+      <Footer />
+    </>
+  );
+}

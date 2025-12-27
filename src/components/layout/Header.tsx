@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "../ui/Button";
@@ -109,105 +110,23 @@ interface LogoProps {
 
 function Logo({ isScrolled }: LogoProps) {
   return (
-    <Link href="/" className="flex items-center gap-3 group" aria-label="Visit Auburn Home">
+    <Link href="/" className="flex items-center group" aria-label="Visit Auburn Home">
       <motion.div
         className="relative"
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
-        <svg
-          className="w-11 h-11"
-          viewBox="0 0 44 44"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          {/* Outer glow for premium feel */}
-          <circle
-            cx="22"
-            cy="22"
-            r="20"
-            className={`transition-all duration-500 ${
-              isScrolled ? "fill-[#C9A24A]/5" : "fill-white/10"
-            }`}
-          />
-
-          {/* Mountain range - back layer */}
-          <path
-            d="M8 32L16 18L22 24L28 16L36 32H8Z"
-            className={`transition-all duration-500 ${
-              isScrolled ? "fill-[#6F7F68]/30" : "fill-white/20"
-            }`}
-          />
-
-          {/* Mountain range - front layer */}
-          <path
-            d="M6 34L15 20L22 28L30 18L38 34H6Z"
-            fill="url(#logoGradient)"
-            className="drop-shadow-sm"
-          />
-
-          {/* Sun/Gold accent with rays */}
-          <circle
-            cx="30"
-            cy="14"
-            r="5"
-            className={`transition-all duration-500 ${
-              isScrolled ? "fill-[#C9A24A]" : "fill-[#E2C58F]"
-            }`}
-          />
-          <circle
-            cx="30"
-            cy="14"
-            r="2.5"
-            className={`transition-all duration-500 ${
-              isScrolled ? "fill-white/70" : "fill-white/90"
-            }`}
-          />
-
-          {/* Subtle sun rays */}
-          <g className={`transition-opacity duration-500 ${isScrolled ? "opacity-40" : "opacity-60"}`}>
-            <line x1="30" y1="7" x2="30" y2="5" stroke="#C9A24A" strokeWidth="1" strokeLinecap="round"/>
-            <line x1="35" y1="9" x2="37" y2="7" stroke="#C9A24A" strokeWidth="1" strokeLinecap="round"/>
-            <line x1="37" y1="14" x2="39" y2="14" stroke="#C9A24A" strokeWidth="1" strokeLinecap="round"/>
-            <line x1="35" y1="19" x2="37" y2="21" stroke="#C9A24A" strokeWidth="1" strokeLinecap="round"/>
-          </g>
-
-          {/* Pine tree silhouettes */}
-          <path
-            d="M12 34L14 28L13 28.5L15 24L14 24.5L16 20L12 34Z"
-            className={`transition-all duration-500 ${
-              isScrolled ? "fill-[#5A6754]" : "fill-white/40"
-            }`}
-          />
-          <path
-            d="M32 34L34 29L33 29.5L35 26L34 26.5L36 23L32 34Z"
-            className={`transition-all duration-500 ${
-              isScrolled ? "fill-[#5A6754]" : "fill-white/40"
-            }`}
-          />
-
-          <defs>
-            <linearGradient id="logoGradient" x1="22" y1="18" x2="22" y2="34" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#C9A24A" />
-              <stop offset="0.5" stopColor="#A98436" />
-              <stop offset="1" stopColor="#7F6328" />
-            </linearGradient>
-          </defs>
-        </svg>
+        <Image
+          src="/images/logo.png"
+          alt="Visit Auburn California"
+          width={160}
+          height={60}
+          className={`h-12 md:h-14 w-auto object-contain transition-all duration-500 ${
+            isScrolled ? "" : "brightness-0 invert"
+          }`}
+          priority
+        />
       </motion.div>
-      <div className="flex flex-col">
-        <span className={`text-xl font-semibold tracking-tight leading-none transition-colors duration-500 ${
-          isScrolled ? "text-[var(--color-text-primary)]" : "text-white"
-        }`}>
-          Visit Auburn
-        </span>
-        <span className={`text-[10px] uppercase tracking-[0.2em] font-medium mt-1 transition-colors duration-500 ${
-          isScrolled ? "text-[var(--color-accent)]" : "text-[#E2C58F]"
-        }`}>
-          California
-        </span>
-      </div>
     </Link>
   );
 }
@@ -281,12 +200,12 @@ function NavLink({ item, isScrolled }: NavLinkProps) {
     >
       <Link
         href={item.href}
-        className="group relative flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-[#C9A24A] hover:text-[#E2C58F] transition-colors duration-500"
-        style={{ color: '#C9A24A' }}
+        className="group relative flex items-center gap-1.5 px-4 py-2 text-sm font-semibold transition-colors duration-500"
+        style={{ color: isScrolled ? '#C9A24A' : '#FFFFFF' }}
       >
         <span className="relative">
           {item.label}
-          {/* Elegant gold underline animation */}
+          {/* Elegant underline animation */}
           <span
             className={`absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-[#C9A24A] via-[#E2C58F] to-[#C9A24A] transition-all duration-300 ease-out ${
               isOpen ? "w-full" : "w-0 group-hover:w-full"
@@ -298,7 +217,7 @@ function NavLink({ item, isScrolled }: NavLinkProps) {
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
           >
-            <ChevronDown className="w-3.5 h-3.5 text-[#C9A24A]" />
+            <ChevronDown className="w-3.5 h-3.5 transition-colors duration-500" style={{ color: isScrolled ? '#C9A24A' : '#FFFFFF' }} />
           </motion.div>
         )}
       </Link>
@@ -521,7 +440,11 @@ export function Header() {
                 whileTap={{ scale: 0.98 }}
               >
                 <button
-                  className="px-5 py-2.5 text-sm font-medium rounded-lg border border-[#C9A24A]/50 text-[#C9A24A] hover:border-[#C9A24A] hover:bg-[#C9A24A]/10 transition-all duration-300 backdrop-blur-sm"
+                  className={`px-5 py-2.5 text-sm font-semibold rounded-lg border transition-all duration-500 backdrop-blur-sm ${
+                    isScrolled
+                      ? "border-[#C9A24A]/50 text-[#C9A24A] hover:border-[#C9A24A] hover:bg-[#C9A24A]/10"
+                      : "border-white/50 text-white hover:border-white hover:bg-white/10"
+                  }`}
                 >
                   Plan Your Trip
                 </button>

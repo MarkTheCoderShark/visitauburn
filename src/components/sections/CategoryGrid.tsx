@@ -20,7 +20,7 @@ const categories: Category[] = [
     id: 'outdoor',
     title: 'Outdoor Adventure',
     description: 'Trails, rivers, and wild spaces await just minutes from downtown.',
-    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80',
+    image: '/images/OutdoorAdventures.png',
     href: '/things-to-do/outdoor',
   },
   {
@@ -142,7 +142,7 @@ export default function CategoryGrid() {
   const canScrollNext = scrollState.next;
 
   return (
-    <section className="py-20 md:py-28 bg-[#1A1714]">
+    <section className="py-20 md:py-28 bg-[#F7F3ED]">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -151,13 +151,13 @@ export default function CategoryGrid() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <span className="inline-block text-[#C9A24A] text-sm font-medium tracking-[0.2em] uppercase mb-4">
+          <span className="inline-block text-[#B8860B] text-sm font-medium tracking-[0.2em] uppercase mb-4">
             Explore & Experience
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-[#1A1815] mb-4">
             Ways to Explore
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-[#3D3833] max-w-2xl mx-auto">
             From river adventures to historic streets, discover what makes Auburn unforgettable.
           </p>
         </motion.div>
@@ -194,7 +194,7 @@ export default function CategoryGrid() {
             <button
               onClick={scrollPrev}
               disabled={!canScrollPrev}
-              className="p-2 rounded-full border border-white/30 text-white/70 disabled:opacity-30 disabled:cursor-not-allowed transition-colors hover:border-[#C9A24A] hover:text-[#C9A24A]"
+              className="p-2 rounded-full border border-[#1A1815]/30 text-[#1A1815]/70 disabled:opacity-30 disabled:cursor-not-allowed transition-colors hover:border-[#B8860B] hover:text-[#B8860B]"
               aria-label="Previous"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -202,7 +202,7 @@ export default function CategoryGrid() {
             <button
               onClick={scrollNext}
               disabled={!canScrollNext}
-              className="p-2 rounded-full border border-white/30 text-white/70 disabled:opacity-30 disabled:cursor-not-allowed transition-colors hover:border-[#C9A24A] hover:text-[#C9A24A]"
+              className="p-2 rounded-full border border-[#1A1815]/30 text-[#1A1815]/70 disabled:opacity-30 disabled:cursor-not-allowed transition-colors hover:border-[#B8860B] hover:text-[#B8860B]"
               aria-label="Next"
             >
               <ChevronRight className="w-5 h-5" />
