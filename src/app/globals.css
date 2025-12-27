@@ -1,49 +1,79 @@
 @import "tailwindcss";
 
+/* Google Fonts Import - Cormorant Garamond & DM Sans */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 /* ============================================
    VISIT AUBURN DESIGN SYSTEM
-   An editorial, calm, and premium aesthetic
+   An editorial luxury aesthetic with California warmth
    ============================================ */
 
 /* --------------------------------------------
-   CSS CUSTOM PROPERTIES
+   CSS CUSTOM PROPERTIES - PREMIUM DESIGN TOKENS
    -------------------------------------------- */
 :root {
+  /* Gold Color Palette - Luxurious & Warm */
+  --color-gold: #B8860B;
+  --color-gold-light: #D4A84B;
+  --color-gold-dark: #8B6914;
+  --color-gold-muted: rgba(184, 134, 11, 0.15);
+  --color-gold-shimmer: linear-gradient(135deg, #D4A84B 0%, #B8860B 50%, #8B6914 100%);
+
   /* Core Colors */
-  --color-background: #FBFBF8;
-  --color-foreground: #111111;
+  --color-background: #FAF8F5;
+  --color-background-warm: #F7F3ED;
+  --color-background-cream: #FDF9F3;
+  --color-foreground: #1A1815;
 
-  /* Text Colors */
-  --color-text-primary: #111111;
-  --color-text-secondary: #333333;
-  --color-text-muted: #666666;
-  --color-text-inverted: #FBFBF8;
+  /* Text Colors - Warm Tinted */
+  --color-text-primary: #1A1815;
+  --color-text-secondary: #3D3833;
+  --color-text-muted: #6B6560;
+  --color-text-subtle: #8A847D;
+  --color-text-inverted: #FAF8F5;
 
-  /* Accent (Gold) */
-  --color-accent: #C9A24A;
-  --color-accent-light: #E2C58F;
-  --color-accent-dark: #A98436;
+  /* Accent (Gold - Primary) */
+  --color-accent: #B8860B;
+  --color-accent-light: #D4A84B;
+  --color-accent-dark: #8B6914;
+  --color-accent-hover: #9A7209;
 
-  /* Secondary (Sage) */
+  /* Secondary (Sage - California Nature) */
   --color-secondary: #6F7F68;
   --color-secondary-light: #AEBDA8;
   --color-secondary-dark: #5A6754;
 
-  /* Neutral Palette */
-  --color-neutral-50: #FBFBF8;
-  --color-neutral-100: #F5F5F2;
-  --color-neutral-200: #EBEBEA;
-  --color-neutral-300: #DDDDD9;
-  --color-neutral-400: #B5B5B0;
-  --color-neutral-500: #8A8A85;
-  --color-neutral-600: #666663;
-  --color-neutral-700: #4D4D4A;
-  --color-neutral-800: #333330;
-  --color-neutral-900: #111111;
+  /* Neutral Palette - Warm Undertones */
+  --color-neutral-50: #FAF8F5;
+  --color-neutral-100: #F7F3ED;
+  --color-neutral-150: #F2EDE5;
+  --color-neutral-200: #EBE5DB;
+  --color-neutral-300: #DDD5C9;
+  --color-neutral-400: #B8AFA2;
+  --color-neutral-500: #8A847D;
+  --color-neutral-600: #6B6560;
+  --color-neutral-700: #4D4842;
+  --color-neutral-800: #3D3833;
+  --color-neutral-900: #1A1815;
 
-  /* Typography */
-  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
-  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  /* Typography - Premium Font Stack */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+
+  /* Typography Scale - Fluid & Elegant */
+  --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.75rem);
+  --text-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.875rem);
+  --text-base: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
+  --text-lg: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-xl: clamp(1.15rem, 1.05rem + 0.5vw, 1.25rem);
+  --text-2xl: clamp(1.35rem, 1.2rem + 0.75vw, 1.5rem);
+  --text-3xl: clamp(1.6rem, 1.4rem + 1vw, 1.875rem);
+  --text-4xl: clamp(2rem, 1.7rem + 1.5vw, 2.25rem);
+  --text-5xl: clamp(2.5rem, 2rem + 2.5vw, 3rem);
+  --text-6xl: clamp(3rem, 2.25rem + 3.75vw, 3.75rem);
+  --text-7xl: clamp(3.5rem, 2.5rem + 5vw, 4.5rem);
+  --text-8xl: clamp(4rem, 2.75rem + 6.25vw, 6rem);
 
   /* Spacing */
   --spacing-section-sm: 3rem;
@@ -58,27 +88,48 @@
   --max-width-content: 720px;
   --max-width-prose: 65ch;
 
+  /* Premium Easing Curves */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
   /* Transitions */
   --transition-fast: 150ms;
   --transition-normal: 250ms;
   --transition-slow: 400ms;
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-slower: 600ms;
+  --transition-slowest: 800ms;
 
-  /* Shadows */
-  --shadow-subtle: 0 1px 2px rgba(17, 17, 17, 0.04);
-  --shadow-soft: 0 4px 12px rgba(17, 17, 17, 0.06);
-  --shadow-medium: 0 8px 24px rgba(17, 17, 17, 0.08);
-  --shadow-elevated: 0 16px 48px rgba(17, 17, 17, 0.12);
+  /* Warm-Tinted Shadows */
+  --shadow-color: 30 20% 10%;
+  --shadow-subtle: 0 1px 2px hsla(var(--shadow-color) / 0.04),
+                   0 1px 3px hsla(var(--shadow-color) / 0.03);
+  --shadow-soft: 0 2px 4px hsla(var(--shadow-color) / 0.04),
+                 0 4px 12px hsla(var(--shadow-color) / 0.06);
+  --shadow-medium: 0 4px 8px hsla(var(--shadow-color) / 0.04),
+                   0 8px 24px hsla(var(--shadow-color) / 0.08);
+  --shadow-elevated: 0 8px 16px hsla(var(--shadow-color) / 0.06),
+                     0 16px 48px hsla(var(--shadow-color) / 0.12);
+  --shadow-dramatic: 0 12px 24px hsla(var(--shadow-color) / 0.08),
+                     0 24px 64px hsla(var(--shadow-color) / 0.16);
+  --shadow-gold: 0 4px 16px hsla(40 90% 38% / 0.15),
+                 0 8px 32px hsla(40 90% 38% / 0.1);
+  --shadow-inner-warm: inset 0 2px 4px hsla(var(--shadow-color) / 0.06);
 
   /* Border Radius */
   --radius-soft: 0.375rem;
   --radius-medium: 0.5rem;
   --radius-large: 1rem;
+  --radius-xl: 1.5rem;
 
   /* Border */
   --border-color: var(--color-neutral-200);
-  --ring-color: var(--color-accent);
+  --border-color-subtle: var(--color-neutral-150);
+  --ring-color: var(--color-gold);
 }
 
 /* --------------------------------------------
@@ -108,20 +159,43 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+/* Smooth scroll with reduced motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: var(--text-base);
   line-height: 1.6;
   min-height: 100vh;
+  font-weight: 400;
 }
 
-/* Selection styling */
+/* Selection styling - Gold accent */
 ::selection {
-  background-color: var(--color-accent);
+  background-color: var(--color-gold-muted);
   color: var(--color-text-primary);
 }
 
@@ -131,10 +205,10 @@ body {
   outline-offset: 2px;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Premium warm styling */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -143,7 +217,8 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-neutral-400);
-  border-radius: 4px;
+  border-radius: 5px;
+  border: 2px solid var(--color-neutral-100);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -151,44 +226,52 @@ body {
 }
 
 /* --------------------------------------------
-   TYPOGRAPHY BASE STYLES
+   TYPOGRAPHY BASE STYLES - CORMORANT GARAMOND
    -------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   font-weight: 500;
   text-wrap: balance;
-}
-
-h1 {
-  font-size: 3rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: 2.25rem;
-  line-height: 1.2;
+  color: var(--color-text-primary);
   letter-spacing: -0.01em;
 }
 
+h1 {
+  font-size: var(--text-6xl);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: var(--text-5xl);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+}
+
 h3 {
-  font-size: 1.5rem;
-  line-height: 1.3;
+  font-size: var(--text-4xl);
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 h4 {
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: var(--text-3xl);
+  line-height: 1.25;
+  font-weight: 500;
 }
 
 h5 {
-  font-size: 1.125rem;
-  line-height: 1.4;
+  font-size: var(--text-2xl);
+  line-height: 1.3;
+  font-weight: 500;
 }
 
 h6 {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: var(--text-xl);
+  line-height: 1.4;
+  font-weight: 500;
 }
 
 p {
@@ -198,11 +281,11 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color var(--transition-fast) var(--ease-smooth);
+  transition: color var(--transition-fast) var(--ease-out-expo);
 }
 
 a:hover {
-  color: var(--color-accent);
+  color: var(--color-gold);
 }
 
 strong, b {
@@ -214,7 +297,166 @@ em, i {
 }
 
 small {
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
+}
+
+/* --------------------------------------------
+   SECTION LABEL WITH GOLD LINE
+   -------------------------------------------- */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold));
+}
+
+.section-label::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+.section-label--left {
+  gap: 0.75rem;
+}
+
+.section-label--left::before {
+  display: none;
+}
+
+.section-label--right {
+  gap: 0.75rem;
+}
+
+.section-label--right::after {
+  display: none;
+}
+
+/* Alternative section label with gold dot */
+.section-label-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.section-label-dot::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+}
+
+/* --------------------------------------------
+   FILM GRAIN TEXTURE KEYFRAMES
+   -------------------------------------------- */
+@keyframes grain {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%, 0%);
+  }
+  70% {
+    transform: translate(0%, 15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
+
+.film-grain {
+  position: relative;
+  overflow: hidden;
+}
+
+.film-grain::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  animation: grain 8s steps(10) infinite;
+  z-index: 1;
+}
+
+.film-grain--subtle::before {
+  opacity: 0.02;
+}
+
+.film-grain--strong::before {
+  opacity: 0.05;
+}
+
+/* Static grain overlay (no animation) */
+.texture-grain {
+  position: relative;
+}
+
+.texture-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Film grain overlay class for hero sections */
+.film-grain-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: 2;
 }
 
 /* --------------------------------------------
@@ -224,123 +466,138 @@ small {
 /* Display styles - for hero sections */
 .text-display-xl {
   font-family: var(--font-serif);
-  font-size: 4.5rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 500;
+  font-size: var(--text-8xl);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 400;
 }
 
 .text-display-lg {
   font-family: var(--font-serif);
-  font-size: 3.75rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 500;
+  font-size: var(--text-7xl);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  font-weight: 400;
 }
 
 .text-display-md {
   font-family: var(--font-serif);
-  font-size: 3rem;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
-  font-weight: 500;
+  font-size: var(--text-6xl);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
 }
 
 .text-display-sm {
   font-family: var(--font-serif);
-  font-size: 2.25rem;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  font-weight: 500;
+  font-size: var(--text-5xl);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 400;
 }
 
 /* Heading styles */
 .text-heading-xl {
   font-family: var(--font-serif);
-  font-size: 2rem;
-  line-height: 1.25;
+  font-size: var(--text-4xl);
+  line-height: 1.2;
   letter-spacing: -0.01em;
   font-weight: 500;
 }
 
 .text-heading-lg {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
-  line-height: 1.3;
+  font-size: var(--text-3xl);
+  line-height: 1.25;
   font-weight: 500;
 }
 
 .text-heading-md {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: var(--text-2xl);
+  line-height: 1.3;
   font-weight: 500;
 }
 
 .text-heading-sm {
   font-family: var(--font-serif);
-  font-size: 1.125rem;
-  line-height: 1.4;
+  font-size: var(--text-xl);
+  line-height: 1.35;
   font-weight: 500;
 }
 
 /* Body text styles */
 .text-body-xl {
   font-family: var(--font-sans);
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: var(--text-xl);
+  line-height: 1.7;
 }
 
 .text-body-lg {
   font-family: var(--font-sans);
-  font-size: 1.125rem;
-  line-height: 1.6;
+  font-size: var(--text-lg);
+  line-height: 1.7;
 }
 
 .text-body-md {
   font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--text-base);
+  line-height: 1.65;
 }
 
 .text-body-sm {
   font-family: var(--font-sans);
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: var(--text-sm);
+  line-height: 1.6;
 }
 
 .text-body-xs {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   line-height: 1.5;
 }
 
 /* Caption and label styles */
 .text-caption {
   font-family: var(--font-sans);
-  font-size: 0.875rem;
-  line-height: 1.4;
+  font-size: var(--text-sm);
+  line-height: 1.5;
   letter-spacing: 0.01em;
   color: var(--color-text-muted);
 }
 
 .text-label {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   line-height: 1.3;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 500;
 }
 
 .text-overline {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: var(--text-xs);
   line-height: 1.3;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-weight: 600;
-  color: var(--color-accent);
+  font-weight: 500;
+  color: var(--color-gold);
+}
+
+/* Editorial quote style */
+.text-quote {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  line-height: 1.4;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+
+/* Premium display typography using Cormorant Garamond */
+.font-display {
+  font-family: var(--font-display);
 }
 
 /* --------------------------------------------
@@ -358,6 +615,22 @@ small {
   color: var(--color-text-muted);
 }
 
+.text-subtle {
+  color: var(--color-text-subtle);
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-gold-light {
+  color: var(--color-gold-light);
+}
+
+.text-gold-dark {
+  color: var(--color-gold-dark);
+}
+
 .text-accent {
   color: var(--color-accent);
 }
@@ -368,6 +641,29 @@ small {
 
 .text-inverted {
   color: var(--color-text-inverted);
+}
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: var(--color-gold-shimmer);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold gradient text effect - alternative */
+.text-gradient-gold {
+  background: linear-gradient(
+    135deg,
+    #f5e6c8 0%,
+    #e8c878 25%,
+    #B8860B 50%,
+    #8B6914 75%,
+    #B8860B 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* --------------------------------------------
@@ -428,7 +724,23 @@ small {
 }
 
 .bg-warm {
-  background-color: var(--color-neutral-100);
+  background-color: var(--color-background-warm);
+}
+
+.bg-warm-cream {
+  background-color: var(--color-background-cream);
+}
+
+.bg-gold {
+  background-color: var(--color-gold);
+}
+
+.bg-gold-light {
+  background-color: var(--color-gold-light);
+}
+
+.bg-gold-muted {
+  background-color: var(--color-gold-muted);
 }
 
 .bg-accent {
@@ -443,6 +755,15 @@ small {
   background-color: var(--color-neutral-900);
 }
 
+/* Gradient backgrounds */
+.bg-gradient-warm {
+  background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-warm) 100%);
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+}
+
 /* --------------------------------------------
    DIVIDER STYLES
    -------------------------------------------- */
@@ -452,10 +773,26 @@ small {
   border: none;
 }
 
+.divider-gold {
+  height: 1px;
+  width: 4rem;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+  border: none;
+}
+
+.divider-gold-center {
+  height: 1px;
+  width: 6rem;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .divider-accent {
   height: 2px;
   width: 3rem;
-  background-color: var(--color-accent);
+  background-color: var(--color-gold);
   border: none;
 }
 
@@ -477,7 +814,7 @@ small {
   background-color: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform var(--transition-normal) var(--ease-smooth);
+  transition: transform var(--transition-normal) var(--ease-out-expo);
 }
 
 .link-underline:hover::after {
@@ -485,13 +822,23 @@ small {
   transform-origin: left;
 }
 
+.link-gold {
+  color: var(--color-gold);
+  font-weight: 500;
+  transition: color var(--transition-fast) var(--ease-out-expo);
+}
+
+.link-gold:hover {
+  color: var(--color-gold-dark);
+}
+
 .link-accent {
-  color: var(--color-accent);
+  color: var(--color-gold);
   font-weight: 500;
 }
 
 .link-accent:hover {
-  color: var(--color-accent-dark);
+  color: var(--color-gold-dark);
 }
 
 /* --------------------------------------------
@@ -504,23 +851,26 @@ small {
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
   font-family: var(--font-sans);
-  font-size: 0.875rem;
+  font-size: var(--text-sm);
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: var(--radius-soft);
-  transition: all var(--transition-normal) var(--ease-smooth);
+  transition: all var(--transition-normal) var(--ease-out-expo);
   cursor: pointer;
   border: none;
 }
 
 .btn-primary {
-  background-color: var(--color-accent);
-  color: var(--color-text-primary);
+  background-color: var(--color-gold);
+  color: white;
+  box-shadow: var(--shadow-gold);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent-dark);
+  background-color: var(--color-gold-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px hsla(40 90% 38% / 0.2);
 }
 
 .btn-secondary {
@@ -530,8 +880,8 @@ small {
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
 }
 
 .btn-ghost {
@@ -541,7 +891,18 @@ small {
 }
 
 .btn-ghost:hover {
-  color: var(--color-accent);
+  color: var(--color-gold);
+}
+
+.btn-gold-outline {
+  background-color: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+}
+
+.btn-gold-outline:hover {
+  background-color: var(--color-gold);
+  color: white;
 }
 
 /* --------------------------------------------
@@ -552,7 +913,7 @@ small {
   border-radius: var(--radius-medium);
   overflow: hidden;
   box-shadow: var(--shadow-subtle);
-  transition: box-shadow var(--transition-normal) var(--ease-smooth);
+  transition: all var(--transition-normal) var(--ease-out-expo);
 }
 
 .card:hover {
@@ -565,6 +926,11 @@ small {
 
 .card-elevated:hover {
   box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+}
+
+.card-warm {
+  background-color: var(--color-background-warm);
 }
 
 /* --------------------------------------------
@@ -581,19 +947,73 @@ small {
   box-shadow: var(--shadow-soft);
 }
 
+.img-warm-overlay {
+  position: relative;
+}
+
+.img-warm-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    hsla(30, 20%, 10%, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* --------------------------------------------
+   HERO GRADIENT OVERLAYS
+   -------------------------------------------- */
+.hero-gradient-top {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 30%,
+    transparent 60%
+  );
+}
+
+.hero-gradient-bottom {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 25%,
+    rgba(0, 0, 0, 0.15) 50%,
+    transparent 100%
+  );
+}
+
+.hero-gradient-vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
 /* --------------------------------------------
    ANIMATION UTILITIES
    -------------------------------------------- */
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.6s var(--ease-out-expo) forwards;
 }
 
 .animate-fade-up {
-  animation: fadeUp 0.6s ease-out forwards;
+  animation: fadeUp 0.7s var(--ease-out-expo) forwards;
 }
 
 .animate-slide-in {
-  animation: slideIn 0.4s ease-out forwards;
+  animation: slideIn 0.5s var(--ease-out-expo) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s var(--ease-out-expo) forwards;
+}
+
+.animate-gold-shimmer {
+  animation: goldShimmer 3s ease-in-out infinite;
 }
 
 @keyframes fadeIn {
@@ -608,7 +1028,7 @@ small {
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -619,12 +1039,91 @@ small {
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateX(-10px);
+    transform: translateX(-16px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes goldShimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Scroll indicator line animation */
+@keyframes scrollLine {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  50.01% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+.animate-scroll-line {
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+/* Floating animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-15px) translateX(8px);
+  }
+  50% {
+    transform: translateY(-25px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+}
+
+@keyframes floatMedium {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-8px) rotate(-3deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium 6s ease-in-out infinite;
 }
 
 /* Animation delay utilities */
@@ -648,36 +1147,42 @@ small {
   animation-delay: 500ms;
 }
 
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+/* --------------------------------------------
+   DECORATIVE ELEMENTS
+   -------------------------------------------- */
+.decorative-circle {
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(1px);
+}
+
+.decorative-circle-filled {
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(184, 134, 11, 0.3) 0%,
+    rgba(184, 134, 11, 0.1) 50%,
+    transparent 100%
+  );
+}
+
 /* --------------------------------------------
    RESPONSIVE TYPOGRAPHY
    -------------------------------------------- */
 @media (max-width: 768px) {
-  .text-display-xl {
-    font-size: 2.5rem;
-  }
-
-  .text-display-lg {
-    font-size: 2.25rem;
-  }
-
-  .text-display-md {
-    font-size: 2rem;
-  }
-
-  .text-display-sm {
-    font-size: 1.75rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.75rem;
-  }
-
-  h3 {
-    font-size: 1.25rem;
+  :root {
+    --spacing-section-sm: 2rem;
+    --spacing-section-md: 3rem;
+    --spacing-section-lg: 5rem;
+    --spacing-section-xl: 6rem;
   }
 }
 
@@ -686,8 +1191,8 @@ small {
    -------------------------------------------- */
 .prose {
   font-family: var(--font-sans);
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: var(--text-lg);
+  line-height: 1.75;
   color: var(--color-text-secondary);
 }
 
@@ -695,50 +1200,98 @@ small {
 .prose h2,
 .prose h3,
 .prose h4 {
-  margin-top: 2em;
-  margin-bottom: 0.5em;
+  font-family: var(--font-serif);
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  color: var(--color-text-primary);
 }
 
 .prose p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.75em;
 }
 
 .prose a {
-  color: var(--color-accent);
+  color: var(--color-gold);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration-color: var(--color-gold-muted);
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition-fast) var(--ease-out-expo);
 }
 
 .prose a:hover {
-  color: var(--color-accent-dark);
+  text-decoration-color: var(--color-gold);
 }
 
 .prose blockquote {
-  border-left: 3px solid var(--color-accent);
+  border-left: 3px solid var(--color-gold);
   padding-left: 1.5rem;
   margin-left: 0;
+  font-family: var(--font-serif);
   font-style: italic;
+  font-size: var(--text-xl);
   color: var(--color-text-muted);
 }
 
 .prose ul,
 .prose ol {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.75em;
   padding-left: 1.5em;
 }
 
 .prose li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
+}
+
+.prose li::marker {
+  color: var(--color-gold);
 }
 
 .prose img {
   border-radius: var(--radius-medium);
-  margin: 2em 0;
+  margin: 2.5em 0;
+  box-shadow: var(--shadow-soft);
 }
 
 .prose hr {
   border: none;
   height: 1px;
-  background-color: var(--color-neutral-200);
-  margin: 3em 0;
+  background: linear-gradient(90deg, transparent, var(--color-neutral-200), transparent);
+  margin: 3.5em 0;
+}
+
+/* --------------------------------------------
+   UTILITY CLASSES - PREMIUM EFFECTS
+   -------------------------------------------- */
+
+/* Gold accent border */
+.border-gold {
+  border-color: var(--color-gold);
+}
+
+.border-gold-subtle {
+  border-color: var(--color-gold-muted);
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform var(--transition-normal) var(--ease-out-expo),
+              box-shadow var(--transition-normal) var(--ease-out-expo);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* Glass effect with warm tint */
+.glass-warm {
+  background: hsla(40, 30%, 98%, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Focus ring gold */
+.focus-ring-gold:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }
