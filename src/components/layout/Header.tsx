@@ -121,9 +121,7 @@ function Logo({ isScrolled }: LogoProps) {
           alt="Visit Auburn California"
           width={160}
           height={60}
-          className={`h-12 md:h-14 w-auto object-contain transition-all duration-500 ${
-            isScrolled ? "" : "brightness-0 invert"
-          }`}
+          className="h-12 md:h-14 w-auto object-contain transition-all duration-500"
           priority
         />
       </motion.div>
