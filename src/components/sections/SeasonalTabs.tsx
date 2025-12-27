@@ -42,7 +42,7 @@ const seasons: Season[] = [
       { id: 'wildflowers', title: 'Wildflower Hikes', description: 'Explore trails bursting with lupines, poppies, and native blooms.', image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&q=80', tag: 'Popular' },
       { id: 'rafting', title: 'Whitewater Rafting', description: 'Experience thrilling rapids on the American River at peak flow.', image: 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?w=500&q=80', tag: 'Adventure' },
       { id: 'farmers', title: 'Farmers Markets', description: 'Shop fresh spring produce from local farms every Saturday.', image: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=500&q=80', tag: 'Family' },
-      { id: 'waterfalls', title: 'Waterfall Chasing', description: 'Visit stunning cascades powered by spring snowmelt.', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80', tag: 'Must See' },
+      { id: 'waterfalls', title: 'Waterfall Chasing', description: 'Visit stunning cascades powered by spring snowmelt.', image: '/images/waterfall.jpg', tag: 'Must See' },
     ],
     ctaText: 'Plan a Spring Visit',
     ctaHref: '/seasons/spring',
