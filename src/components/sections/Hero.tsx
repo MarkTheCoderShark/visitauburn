@@ -151,10 +151,9 @@ export default function Hero() {
 
           <Link
             href="/things-to-do"
-            className="group relative px-10 py-4 bg-transparent text-white font-medium text-sm tracking-widest uppercase rounded-none overflow-hidden transition-all duration-500 min-w-[200px] border border-white/40 hover:border-white/80"
+            className="group relative px-10 py-4 bg-black/20 backdrop-blur-sm font-medium text-sm tracking-widest uppercase rounded-none overflow-hidden transition-all duration-500 min-w-[200px] border border-white/60 hover:border-white hover:bg-black/30"
           >
-            <span className="relative z-10">Explore & Experience</span>
-            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <span className="relative z-10 text-white" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>Explore & Experience</span>
           </Link>
         </motion.div>
       </motion.div>
