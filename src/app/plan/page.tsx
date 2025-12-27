@@ -57,14 +57,14 @@ const itineraries = [
     duration: '1 Day',
     description: 'Experience the best of Auburn in a single day - history, nature, and great food.',
     highlights: ['Old Town Walking Tour', 'Lunch at Local Favorite', 'Hidden Falls Hike', 'Sunset at Confluence'],
-    image: '/images/guides/weekend-guide.jpg',
+    image: '/images/categories/old-town-history.jpg',
   },
   {
     title: 'Gold Country Weekend',
     duration: '2-3 Days',
     description: 'Immerse yourself in Gold Rush history and Sierra foothill beauty.',
     highlights: ['Historic Museums', 'Wine Tasting', 'River Adventures', 'Farm-to-Fork Dining'],
-    image: '/images/guides/history-walk.jpg',
+    image: '/images/food-wine.jpg',
   },
   {
     title: 'Outdoor Adventure Week',
@@ -506,12 +506,15 @@ function ContactCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[var(--color-neutral-900)] text-white font-medium text-sm tracking-wider uppercase rounded-sm hover:bg-[var(--color-neutral-800)] transition-colors"
+            <a
+              href="mailto:info@visitauburn.com"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-neutral-900)] text-white font-medium text-sm tracking-wider uppercase rounded-sm hover:bg-[var(--color-neutral-800)] transition-colors"
             >
-              Contact Us
-            </Link>
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              Email Us
+            </a>
             <a
               href="tel:+15308850540"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[var(--color-neutral-300)] text-[var(--color-text-primary)] font-medium text-sm tracking-wider uppercase rounded-sm hover:border-[#C9A24A] hover:text-[#C9A24A] transition-colors bg-white"
