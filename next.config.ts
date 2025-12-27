@@ -23,6 +23,18 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'powers-mansion.allhotelscalifornia.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.parks.ca.gov',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.mercurynews.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'visit-eldorado.com',
+      },
     ],
   },
 };
