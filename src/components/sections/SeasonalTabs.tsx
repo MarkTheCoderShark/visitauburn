@@ -96,7 +96,7 @@ const seasons: Season[] = [
       { id: 'cozy', title: 'Cozy Dining', description: 'Warm up with comfort food and local wines by the fire.', image: 'https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=500&q=80', tag: 'Popular' },
       { id: 'snow', title: 'Ski Day Trips', description: 'Hit the slopes at nearby Lake Tahoe resorts.', image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=500&q=80', tag: 'Adventure' },
       { id: 'holiday', title: 'Holiday Events', description: 'Experience festive celebrations and light displays.', image: 'https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=500&q=80', tag: 'Family' },
-      { id: 'trails', title: 'Winter Hiking', description: 'Explore quiet trails in mild winter weather.', image: 'https://images.unsplash.com/photo-1418985991508-e47386d96a71?w=500&q=80', tag: 'Must See' },
+      { id: 'trails', title: 'Winter Hiking', description: 'Explore quiet trails in mild winter weather.', image: '/images/seasonal/winter-hiking.jpg', tag: 'Must See' },
     ],
     ctaText: 'Plan a Winter Visit',
     ctaHref: '/seasons/winter',
