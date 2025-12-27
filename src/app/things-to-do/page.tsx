@@ -30,7 +30,7 @@ const categories = [
     subtitle: 'Creative Spirit',
     description: 'Discover Auburn\'s vibrant creative scene through galleries showcasing local artists, live performances at historic venues, and a community that celebrates artistic expression in all its forms.',
     href: '/things-to-do/arts-culture',
-    image: '/images/categories/old-town-history.jpg',
+    image: '/images/categories/arts-culture.jpg',
     icon: Palette,
     color: '#8B6914',
     stats: [
