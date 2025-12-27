@@ -75,10 +75,10 @@ const seasons: Season[] = [
     accentLight: '#F5E6DA',
     bgGradient: 'from-orange-50 to-neutral-50',
     activities: [
-      { id: 'foliage', title: 'Fall Foliage Trails', description: 'Hike through golden oaks and colorful vineyards.', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80', tag: 'Must See' },
+      { id: 'foliage', title: 'Fall Foliage Trails', description: 'Hike through golden oaks and colorful vineyards.', image: 'https://visit-eldorado.com/wp-content/uploads/2016/10/Jill-E-Nauman-fall-e1506646362353.jpg', tag: 'Must See' },
       { id: 'apple', title: 'Apple Hill', description: 'Visit nearby Apple Hill for U-pick orchards and fresh cider.', image: 'https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?w=500&q=80', tag: 'Family' },
-      { id: 'harvest', title: 'Harvest Festivals', description: 'Celebrate the season with local food and wine events.', image: 'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=500&q=80', tag: 'Popular' },
-      { id: 'running', title: 'Trail Running', description: 'Run iconic trails in perfect autumn temperatures.', image: 'https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=500&q=80', tag: 'Adventure' },
+      { id: 'harvest', title: 'Harvest Festivals', description: 'Celebrate the season with local food and wine events.', image: 'https://www.mercurynews.com/wp-content/uploads/2018/10/SJM-L-MANDARIN-1014-02.jpg?w=620', tag: 'Popular' },
+      { id: 'running', title: 'Trail Running', description: 'Run iconic trails in perfect autumn temperatures.', image: 'https://www.parks.ca.gov/pages/502/images/Windy%20Pt%202%20%203%20combined.jpg', tag: 'Adventure' },
     ],
     ctaText: 'Plan a Fall Visit',
     ctaHref: '/seasons/fall',
