@@ -14,7 +14,7 @@ const categories = [
     id: 'dining',
     title: 'Farm-to-Fork Dining',
     description: 'Auburn embraces California\'s farm-to-fork movement with restaurants sourcing ingredients from local farms, ranches, and artisan producers. From casual bistros to upscale dining, taste the freshness of the Sierra foothills.',
-    image: '/images/categories/food-drink.jpg',
+    image: '/images/food-dining.jpg',
     icon: UtensilsCrossed,
     highlights: ['Local Ingredients', 'Seasonal Menus', 'California Cuisine'],
   },
@@ -22,7 +22,7 @@ const categories = [
     id: 'wine',
     title: 'Wine Tasting',
     description: 'The Gold Country wine region produces exceptional wines in small batches. Visit tasting rooms in historic buildings or venture to nearby vineyards for a true wine country experience.',
-    image: '/images/seasonal/spring-1.jpg',
+    image: '/images/food-wine.jpg',
     icon: Wine,
     highlights: ['Tasting Rooms', 'Vineyard Tours', 'Wine Pairing Events'],
   },
@@ -30,7 +30,7 @@ const categories = [
     id: 'craft-beer',
     title: 'Craft Breweries',
     description: 'Auburn\'s craft beer scene is thriving with local breweries creating innovative brews inspired by the region. Enjoy a cold pint in a taproom or take home a growler.',
-    image: '/images/seasonal/summer-1.jpg',
+    image: '/images/food-beer.jpg',
     icon: Beer,
     highlights: ['Local Breweries', 'Taprooms', 'Brewery Tours'],
   },
@@ -38,7 +38,7 @@ const categories = [
     id: 'coffee',
     title: 'Cafés & Bakeries',
     description: 'Start your morning with locally roasted coffee and fresh-baked pastries. Auburn\'s café scene offers cozy spots to relax and refuel during your exploration.',
-    image: '/images/seasonal/fall-1.jpg',
+    image: '/images/food-coffee.jpg',
     icon: Coffee,
     highlights: ['Local Roasters', 'Fresh Pastries', 'Outdoor Seating'],
   },
@@ -105,7 +105,7 @@ function HeroSection() {
     <section ref={ref} className="relative h-[80vh] min-h-[600px] overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0">
         <Image
-          src="/images/categories/food-drink.jpg"
+          src="/images/food-dining.jpg"
           alt="Auburn Food and Drink"
           fill
           className="object-cover"
@@ -335,7 +335,7 @@ function FarmersMarket() {
           >
             <div className="aspect-[4/3] rounded-sm overflow-hidden">
               <Image
-                src="/images/seasonal/summer-1.jpg"
+                src="/images/food-wine.jpg"
                 alt="Auburn Farmers Market"
                 fill
                 className="object-cover"
