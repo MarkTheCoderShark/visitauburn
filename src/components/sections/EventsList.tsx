@@ -24,7 +24,7 @@ const events: Event[] = [
     month: 'Year',
     day: 'SAT',
     location: 'Old Town Auburn',
-    image: '/images/event-farmers-market.jpg',
+    image: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400&q=80',
     href: '/events/farmers-market',
   },
   {
@@ -34,7 +34,7 @@ const events: Event[] = [
     month: 'SEP',
     day: '6-8',
     location: 'Gold Country Fairgrounds',
-    image: '/images/event-fair.jpg',
+    image: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400&q=80',
     href: '/events/gold-country-fair',
   },
   {
@@ -44,7 +44,7 @@ const events: Event[] = [
     month: 'Monthly',
     day: '1st',
     location: 'Old Town Auburn',
-    image: '/images/event-wine-walk.jpg',
+    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&q=80',
     href: '/events/wine-walk',
   },
   {
@@ -54,7 +54,7 @@ const events: Event[] = [
     month: 'JUN',
     day: '28',
     location: 'Placer High School',
-    image: '/images/event-western-states.jpg',
+    image: 'https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=400&q=80',
     href: '/events/western-states',
   },
 ];

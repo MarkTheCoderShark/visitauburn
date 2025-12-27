@@ -21,7 +21,7 @@ const guides: Guide[] = [
     description:
       'From Friday evening to Sunday afternoon, this itinerary covers the best of Auburn. Start with wine and dinner in Old Town, wake up to trail running or river swimming, and finish with a leisurely brunch before exploring local shops.',
     readTime: '8 min read',
-    image: '/images/guide-weekend.jpg',
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80',
     href: '/guides/weekend-in-auburn',
   },
   {
@@ -30,7 +30,7 @@ const guides: Guide[] = [
     description:
       'A self-guided walking tour through Auburn\'s most significant historical sites. Visit the iconic courthouse, discover stories of the Gold Rush era, and see where early California began to take shape.',
     readTime: '6 min read',
-    image: '/images/guide-history.jpg',
+    image: 'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=800&q=80',
     href: '/guides/history-walk',
   },
 ];

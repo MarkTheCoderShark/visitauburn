@@ -20,42 +20,42 @@ const categories: Category[] = [
     id: 'outdoor',
     title: 'Outdoor Adventure',
     description: 'Trails, rivers, and wild spaces await just minutes from downtown.',
-    image: '/images/category-outdoor.jpg',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80',
     href: '/things-to-do/outdoor',
   },
   {
     id: 'history',
     title: 'Old Town & History',
     description: 'Step back in time through Gold Rush-era architecture and stories.',
-    image: '/images/category-history.jpg',
+    image: 'https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=800&q=80',
     href: '/things-to-do/history',
   },
   {
     id: 'food',
     title: 'Food & Drink',
     description: 'Farm-to-fork dining, craft breweries, and wine tasting rooms.',
-    image: '/images/category-food.jpg',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
     href: '/things-to-do/food-drink',
   },
   {
     id: 'events',
     title: 'Events',
     description: 'Festivals, markets, and community gatherings year-round.',
-    image: '/images/category-events.jpg',
+    image: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80',
     href: '/events',
   },
   {
     id: 'family',
     title: 'Family Fun',
     description: 'Adventures and activities for all ages to enjoy together.',
-    image: '/images/category-family.jpg',
+    image: 'https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?w=800&q=80',
     href: '/things-to-do/family',
   },
   {
     id: 'shopping',
     title: 'Shopping & Art',
     description: 'Boutiques, galleries, and artisan finds in historic storefronts.',
-    image: '/images/category-shopping.jpg',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
     href: '/things-to-do/shopping',
   },
 ];
@@ -142,7 +142,7 @@ export default function CategoryGrid() {
   const canScrollNext = scrollState.next;
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-20 md:py-28 bg-[#1A1714]">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -151,10 +151,13 @@ export default function CategoryGrid() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-stone-900 mb-4">
+          <span className="inline-block text-[#C9A24A] text-sm font-medium tracking-[0.2em] uppercase mb-4">
+            Explore & Experience
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4">
             Ways to Explore
           </h2>
-          <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+          <p className="text-lg text-white/70 max-w-2xl mx-auto">
             From river adventures to historic streets, discover what makes Auburn unforgettable.
           </p>
         </motion.div>
