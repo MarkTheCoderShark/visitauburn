@@ -43,7 +43,7 @@ const properties: Property[] = [
     id: 'auburn-cottage',
     name: 'Auburn Cottage Retreat',
     type: 'Vacation Rental',
-    image: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&q=80',
+    image: '/images/auburn-cottage.jpg',
     rating: 4.7,
     href: '/stay/auburn-cottage',
   },
