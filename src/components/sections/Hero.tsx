@@ -163,7 +163,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 md:bottom-12 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-10"
       >
         <div className="flex flex-col items-center gap-3">
           <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-white/60 font-light">
