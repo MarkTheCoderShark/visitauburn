@@ -14,7 +14,7 @@ const activities = [
     id: 'hiking',
     title: 'Hiking & Trail Running',
     description: 'Explore over 100 miles of trails through oak woodlands, chaparral, and along the American River canyon. The legendary Western States Trail starts right here.',
-    image: '/images/OutdoorAdventures.png',
+    image: '/images/outdoor-hill.jpg',
     icon: Mountain,
     highlights: ['Western States Trail', 'Confluence Trail', 'Stagecoach Trail'],
     difficulty: 'Easy to Expert',
@@ -23,7 +23,7 @@ const activities = [
     id: 'water',
     title: 'River Adventures',
     description: 'The American River offers world-class whitewater rafting, kayaking, and swimming. Cool off in natural swimming holes or paddle through Class III rapids.',
-    image: '/images/seasonal/summer-1.jpg',
+    image: '/images/outdoor-trails.webp',
     icon: Waves,
     highlights: ['Whitewater Rafting', 'Kayaking', 'Swimming Holes'],
     difficulty: 'Beginner to Advanced',
@@ -32,7 +32,7 @@ const activities = [
     id: 'biking',
     title: 'Mountain Biking',
     description: 'From flowy singletrack to technical descents, Auburn is a mountain biking paradise. The Confluence area offers miles of purpose-built trails.',
-    image: '/images/OutdoorAdventures.png',
+    image: '/images/outdoor-cardiac.jpg',
     icon: Bike,
     highlights: ['Cool Springs Trail', 'Knickerbocker', 'Clementine Loop'],
     difficulty: 'Intermediate to Expert',
@@ -41,7 +41,7 @@ const activities = [
     id: 'nature',
     title: 'Nature & Wildlife',
     description: 'Discover the diverse ecosystems of the Sierra foothills. Birdwatching, wildflower viewing, and wildlife photography opportunities abound year-round.',
-    image: '/images/seasonal/spring-1.jpg',
+    image: '/images/outdoor-hiddenfalls.png',
     icon: TreePine,
     highlights: ['Spring Wildflowers', 'Bird Watching', 'Wildlife Photography'],
     difficulty: 'All Levels',
@@ -106,7 +106,7 @@ function HeroSection() {
     <section ref={ref} className="relative h-[80vh] min-h-[600px] overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0">
         <Image
-          src="/images/OutdoorAdventures.png"
+          src="/images/outdoor-trails.webp"
           alt="Auburn Outdoor Adventures"
           fill
           className="object-cover"
