@@ -51,7 +51,7 @@ const properties: Property[] = [
     id: 'lake-clementine',
     name: 'Lake Clementine Cabins',
     type: 'Rustic Cabins',
-    image: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=800&q=80',
+    image: '/images/lake-clementine-cabin.jpg',
     rating: 4.6,
     href: '/stay/lake-clementine',
   },
