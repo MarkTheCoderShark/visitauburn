@@ -103,7 +103,7 @@ export function FeatureSplitRivers() {
 export function FeatureSplitTrails() {
   return (
     <FeatureSplit
-      image="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80"
+      image="/images/outdoor-hill.jpg"
       imageAlt="Hiking trails near Auburn"
       heading="Trails for Every Journey"
       description="From the Western States Trail to peaceful forest paths, Auburn offers more than 100 miles of trails for hiking, mountain biking, and trail running. Whether you're training for an ultra or seeking a sunset stroll, there's a trail waiting for you."
